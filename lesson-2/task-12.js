@@ -1,3 +1,5 @@
+const array = [2, -1, -3, 15, 0, 4];
+
 sum = 0;
 
 for(let i = 0; i < array.length; i++) {
