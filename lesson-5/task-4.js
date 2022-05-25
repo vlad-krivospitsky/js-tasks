@@ -10,4 +10,3 @@ function extractCurrencyValue(source) {
 }
 extractCurrencyValue(PRICE); // 120
 
-exports.extractCurrencyValue = extractCurrencyValue;

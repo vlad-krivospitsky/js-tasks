@@ -14,6 +14,7 @@
 const array = [1, 2, 'Добро пожаловать.', 4, 5, 6];
 
 // Решение
+//
 
 const result = some(array, function (item, i, arrayRef) {
     console.log(item); // элемент массива
