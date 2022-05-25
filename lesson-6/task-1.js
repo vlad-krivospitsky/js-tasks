@@ -11,15 +11,56 @@
  * - В качестве второго аргумента была передана не функция.
  */
 
-const array = [1, 2, 3];
-
-const forEach = (array, callback) => {
-  for (let i = 0; i < array.length; i++) {
-    callback(array[i]);
+const forEach = (innerArr, callback) => {
+  const isValid = Array.isArray(innerArr) && typeof callback === 'function';
+  
+  if (!isValid) {
+    throw new Error('Arguments is not valid')
+  }
+  for (let i = 0; i < innerArr.length; i++) {
+    callback(innerArr[i], i, innerArr);
   }
 }
-    forEach(array, ()=> {
-    console.log(item);
-        });
+const array = [1, 2, 3];
+forEach(array, (item, index, arrayRef) => {
+  console.log(item, index, arrayRef);
+});
 
-        
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+//--------------------------------------
+// const array = [1, 2, 3];
+
+// const forEach = (array, callback) => {
+//   for (let i = 0; i < array.length; i++) {
+//     callback(array[i], i, array);
+//   }
+// }
+// if(Array.isArray(array)) {
+//   forEach(array, (item, index, arrayRef) => {
+//     console.log(item, index, arrayRef);
+//   });
+// } else {
+//   throw new Error('The argument is not an array')
+// }
+
+//--------------------------------
+
