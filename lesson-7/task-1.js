@@ -51,3 +51,19 @@ if(isValid) {
 }
 
 inspect(array);
+
+//
+
+const array = [false, 'Привет.', 2, 'Здравствуй.', [], 'Прощай.', { name: 'Уолтер', surname: 'Уайт' }, 'Приветствую.'];
+
+let newArr = [...array];
+    function inspect(arr) {
+        if (Array.isArray(arr)) {
+            let result = newArr.filter(item => typeof item === 'string').map(el => el.length);
+            return result;
+        } else {
+            throw new TypeError('The argument is not an array')
+        }
+     } 
+
+inspect(array);

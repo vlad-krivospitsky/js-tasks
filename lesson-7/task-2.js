@@ -19,18 +19,21 @@
  * - Если на каком-то уровне было найдено не число и не массив.
  */
 
-// Решение
-
-function collect(arr) {
-    let newArr = [...arr];
-    let flated = newArr.flat(5);
-    let result = flated.reduce(function (previousValue, currentValue) {
-        return previousValue + currentValue;
-    });
-  return result;
-}
 
 //------------------------------------------------
+
+
+function collect(arr) {
+  if(!Array.isArray(arr)) {
+    throw new TypeError('The arguments is not an array');
+  } else {
+    let newArr = [...arr];
+    let result = newArr.flat(5).reduce(function (prev, cur) {
+      return prev + cur;
+    });
+    return result;
+  }
+}
 
 const array1 = [[[1, 2], [1, 2]], [[2, 1], [1, 2]]];
 console.log(collect(array1)); // 12
